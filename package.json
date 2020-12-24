@@ -1,11 +1,14 @@
 {
 	"name": "quick-workspace-switcher",
-	"displayName": "Workspace Switcher",
-	"description": "Extension to quickly switch from one workspace to another one.",
-	"version": "0.0.1",
+	"displayName": "Quick Workspace Switcher",
+	"description": "Extension to quickly switch from one workspace to another.",
+	"version": "1.0.0",
 	"publisher": "j-clavoie",
 	"engines": {
-		"vscode": "^1.52.0"
+		"vscode": "^1.30.0"
+	},
+	"author": {
+		"name": "J-C Lavoie"
 	},
 	"categories": [
 		"Other"
@@ -25,32 +28,42 @@
 			"title": "Quick Workspace Switcher",
 			"properties": {
 				"quick-workspace-switcher.workspaces": {
+					"description": "List of all workspaces. The full path must includes the filename of each workspace you want.",
 					"type": "array",
 					"default": [
 						{
-							"name": "Userfriendly name for this workspace",
-							"path": "Full path to workspace including the workspace filename inside de folder"
+							"name": "No workspace set for the moment",
+							"path": ""
 						}
-					],
-					"description": "Enter the list of all workspaces desires in the extension. The full path must includes the filename of each workspace you want."
+					]
+				},
+				"quick-workspace-switcher.saveBeforeSwitch": {
+					"description": "Defines is all files (including untitled) must be saved before switching to another workspace.",
+					"type": "boolean",
+					"default": true
 				}
 			}
 		}
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/j-clavoie/vscode-quick-workspace-switcher.git"
+	},
+	"readme": "https://github.com/j-clavoie/vscode-quick-workspace-switcher/blob/main/README.md",
 	"scripts": {
 		"lint": "eslint .",
 		"pretest": "npm run lint",
 		"test": "node ./test/runTest.js",
 		"vscode:prepublish": "webpack --mode production",
-    "webpack": "webpack --mode development",
-    "webpack-dev": "webpack --mode development --watch",
-    "test-compile": "tsc -p ./"
+		"webpack": "webpack --mode development",
+		"webpack-dev": "webpack --mode development --watch",
+		"test-compile": "tsc -p ./"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.3",
 		"@types/mocha": "^8.0.0",
 		"@types/node": "^12.11.7",
-		"@types/vscode": "^1.52.0",
+		"@types/vscode": "^1.30.0",
 		"eslint": "^7.9.0",
 		"glob": "^7.1.6",
 		"mocha": "^8.1.3",
