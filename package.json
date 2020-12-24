@@ -45,6 +45,7 @@
 			}
 		}
 	},
+	"license": "See file LICENSE",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/j-clavoie/vscode-quick-workspace-switcher.git"
